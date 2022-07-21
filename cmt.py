@@ -73,7 +73,7 @@ class WorktimeController:
 
     def finish_worktime(self):
         self.worktimes[-1].end_time = datetime.now()
-        self.worktimes[-1].hours = self.worktimes[-1].start_time - self.worktimes[-1].end_time
+        self.worktimes[-1].hours = self.worktimes[-1].end_time - self.worktimes[-1].start_time
         self.db.write(self.worktimes)
 
 # Model
